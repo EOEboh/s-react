@@ -1,6 +1,7 @@
 
 import React, { Component } from "react";
 import AttributesValue from "../ui/AttributesValue";
+import '../../App.css'
 
 
 class ProductAttributes extends Component {
@@ -36,7 +37,7 @@ class ProductAttributes extends Component {
         {attributes.length > 0 ? (
           <div>
             {attributes.map((attr) => (
-              <div key={attr.name}>
+              <div key={attr.name} className="productattributes-name">
                 {!cart && (
                   <h5 style={styles.name}>{attr.name}:</h5>
                 )}
@@ -72,7 +73,7 @@ const  styles = {
   },
   value: {
     display: 'flex',
-    flexDirection: 'column',
+    justifyContent: 'space-between',
     alignItems: 'center',
     gap: ''
   },

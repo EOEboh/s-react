@@ -12,6 +12,7 @@ import ProductAttributes from "./ProductAttributes";
 import NotificationTitle from "../ui/NotificationTitle";
 import ButtonFill from "../ui/Buttons/ButtonFill";
 import ButtonOutline from "../ui/Buttons/ButtonOutline";
+import '../../App.css';
 
 class Product extends PureComponent {
   constructor(props) {
@@ -138,14 +139,14 @@ class Product extends PureComponent {
         />
         </div>
         <div>
-          <h3 className={''}>{name}</h3>
+          <h3 className='product-name'>{name}</h3>
           <ProductPrice
             currency={currency}
             prices={prices}
           />
         </div>
         
-        {!inStock && <h4>Out of stock</h4>}
+        {!inStock && <h4 className="product-out-of-stock">Out of stock</h4>}
         {addModal && (
           <Modal modalIsOpen={modalIsOpen}>
             <NotificationTitle><h4> Select attributes </h4> </NotificationTitle>

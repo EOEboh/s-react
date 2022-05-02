@@ -28,13 +28,15 @@ class Gallery extends PureComponent {
                 style={
                   index === currentIndex
                     ? {width: '8rem',
-   height: '8rem',
-   objectFit: 'cover',
-   cursor: 'pointer', opacity: 0.5} 
-                    : {width: '8rem',
-                    height: '8rem',
-                    objectFit: 'cover',
-                    cursor: 'pointer'}
+                      height: '8rem',
+                      objectFit: 'cover',
+                      cursor: 'pointer', 
+                      opacity: 0.5} 
+                    : {
+                      width: '8rem',
+                      height: '8rem',
+                      objectFit: 'cover',
+                      cursor: 'pointer'}
                 }
                 src={image}
                 onError={(e) => {
@@ -58,16 +60,12 @@ class Gallery extends PureComponent {
 const styles = {
  gallery:{
     display: 'flex',
-    columnGap: '2px'
+    columnGap: '5px',
+    
  },
  galleryImage:{
     flexDirection: 'column'
  },
- image: {
-   
- },
- imageSelected: {
-   
- }
+ 
 }
 export default Gallery;

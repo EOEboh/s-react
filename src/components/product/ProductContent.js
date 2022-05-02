@@ -8,6 +8,7 @@ import Modal from "../ui/Modal";
 import NotificationTitle from "../ui/NotificationTitle";
 import ProductAttributes from "./ProductAttributes";
 import ProductPrice from "./ProductPrice";
+import '../../App.css';
 
 class ProductContent extends PureComponent {
   constructor(props) {
@@ -100,8 +101,8 @@ class ProductContent extends PureComponent {
 
     return (
       <div style={styles.content}>
-        <h3 >{brand}</h3>
-        <h3>{name}</h3>
+        <h3 className="product-content-brand">{brand}</h3>
+        <h3 className="product-content-name">{name}</h3>
         <ProductAttributes
           productDetailsAttr
           attributes={attributes}
@@ -109,11 +110,10 @@ class ProductContent extends PureComponent {
           handleItemsSelect={this.handleItemsSelect}
         />
         <div style={styles.price}>
-          <h5>Price:</h5>
+          <h5 className="product-content-price">Price:</h5>
           <ProductPrice
             currency={currency}
-            prices={prices}
-            
+            prices={prices}           
           />
         </div>
         <ButtonFill
@@ -121,12 +121,11 @@ class ProductContent extends PureComponent {
             this.handleAddToCart(productToCart);
           }}
         >
+          <p className="product-content-text"> 
           Add To Cart
+          </p>
         </ButtonFill>
-        <Modal isOpen={isOpen} showModal={showModal}>
-          <NotificationTitle>Select all attributes</NotificationTitle>
-        </Modal>
-        <div>{ReactHtmlParser(description)}</div>
+        <div className="product-content-description">{ReactHtmlParser(description)}</div>
       </div>
     );
   }

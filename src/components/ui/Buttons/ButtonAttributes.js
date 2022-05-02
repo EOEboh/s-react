@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+import '../../../App.css';
 
 
 class ButtonAttributes extends PureComponent {
@@ -8,28 +9,19 @@ class ButtonAttributes extends PureComponent {
     return (
       <input
         style={style}
-        type='radio'
+        type='radio'  
         value={value}
         id={id}
         name={name}
         onChange={onChange}
-        className={styles.button}
+        // className={styles.button}
         disabled={disabled}
+        className= 'buttonattributes-radio'
       />
+    
     );
   }
 }
 
-const styles = {
-  button: {
-    position: 'absolute',
-    appearance: 'none',
-  
-    '&:checked + label': {
-      backgroundColor: 'black',
-      color: 'white',
-      border: 'solid 2px black'
-    }
-  }
-}
+
 export default ButtonAttributes;

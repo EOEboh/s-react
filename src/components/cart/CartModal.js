@@ -7,6 +7,7 @@ import Modal from "../ui/Modal";
 import NotificationTitle from "../ui/NotificationTitle";
 
 import CartModalProduct from "./CartModalProduct";
+import'../../App.css';
 
 class CartModal extends PureComponent {
   
@@ -42,7 +43,7 @@ class CartModal extends PureComponent {
         ) : (
           <>
             {" "}
-            <h2 className={''}>
+            <h2 className='cart-modal-h2'>
               My Bag,{" "}
               <span>
                 {qty} {qty === 1 ? 'item' : 'items'}
@@ -55,14 +56,14 @@ class CartModal extends PureComponent {
                 product={product}
               />
             ))}
-            <div style={styles.total}>
+            <div style={styles.total} className='cart-modal-total'>
               <h4 style={styles.totalTitle}>Total</h4>
               <p style={styles.totalAmount}>
                 {currency.symbol}
                 {parseFloat(totalAmount.toFixed(2))}
               </p>
             </div>
-            <div style={styles.buttons}>
+            <div style={styles.buttons} className='cart-modal-btns'>
               <button onClick={ () => hideModal()} link={"/cart"}
               style={styles.button}
               >

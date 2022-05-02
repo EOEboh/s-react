@@ -18,8 +18,6 @@ class ProductPrice extends PureComponent {
     );
   }
 }
-const styles = {
-  fontSize: 'large'
-}
+
 
 export default ProductPrice;

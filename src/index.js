@@ -4,7 +4,6 @@ import App from "./App";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
-import "./styles/main.scss";
 import store from "./app/store";
 
 const client = new ApolloClient({

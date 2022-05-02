@@ -42,7 +42,8 @@ const modalStyles = {
     height: 'auto',
     padding: '1rem',
     maxWidth: '34rem',
-    overflowY: 'auto !important'
+    overflowY: 'auto !important',
+    
   } 
 }
 

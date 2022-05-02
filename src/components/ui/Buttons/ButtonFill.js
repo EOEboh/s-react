@@ -20,14 +20,15 @@ class ButtonFill extends PureComponent {
 
 const styles = {
   backgroundColor: '#5ECE7B',
-    border: '1px solid',
+    border: 'none',
     textTransform: 'uppercase',
     width: '14rem',
     padding: '1rem',
     textAlign: 'center',
-    color: 'black',
+    color: '#FFFFFF',
     fontWeight: 'bold',
     textAlign: 'center',
+    marginTop: '2rem',
     marginRight: '1rem',
     cursor:'pointer',
 }

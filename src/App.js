@@ -4,6 +4,7 @@ import Cart from "./components/cart/Cart";
 import Layout from "./components/layout/Layout";
 import ProductDetails from "./components/product/ProductDetails";
 import ProductCategoryPage from "./components/product/ProductCategoryPage";
+import './App.css'
 
 class App extends PureComponent {
   render() {

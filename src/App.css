@@ -1,0 +1,152 @@
+/* Raleway Font */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,600;0,700;1,100;1,200&display=swap');
+
+/* Roboto Font */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,600;0,700;1,100;1,200&family=Roboto:ital,wght@0,300;0,700;1,100;1,300&display=swap');
+
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navbar.js */
+.header{
+  font-family: 'Raleway';
+  font-weight: 600;
+}
+.category-name{
+  font-family: 'Raleway';
+font-style: normal;
+font-weight: 400;
+font-size: 42px;
+line-height: 160%;
+}
+
+/* Product.js */
+.product-name{
+  font-family: 'Raleway';
+font-style: normal;
+font-weight: 300;
+font-size: 18px;
+line-height: 160%;
+}
+.product-out-of-stock{
+  font-family: 'Raleway';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 160%;
+}
+
+/* ProductContent.js */
+.product-content-brand{
+  font-family: 'Raleway';
+font-style: normal;
+font-weight: 600;
+font-size: 30px;
+line-height: 27px;
+}
+.product-content-name{
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 27px;
+  margin-top: 1rem;
+}
+.product-content-price{
+  font-family: 'Roboto Condensed';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 18px;
+margin-top: 1rem;
+}
+.product-content-text{
+  font-family: 'Raleway';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 120%;
+}
+.product-content-description{
+  font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 159.96%;
+color: #1D1F22;
+/* width: 300px; */
+margin-top: 2rem;
+}
+
+/* ProductAtrributes.js */
+.productattributes-name{
+  font-family: 'Roboto Condensed';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 18px;
+color: #1D1F22;
+margin-top: 2rem;
+}
+
+/* ButtonAttributes.js */
+
+input[type=radio] {
+  border: 0px;
+  width: 100%;
+  
+}
+
+/* CartModal.js */
+.cart-modal-h2{
+  font-family: 'Raleway';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 160%;
+color: #1D1F22;
+}
+.cart-modal-total{
+  font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 18px;
+}
+.cart-modal-btns{
+  font-family: 'Raleway';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 120%;
+}
+
+/* CartModalProduct.js */
+.cart-modal-product-brand{
+  font-family: 'Raleway';
+font-style: normal;
+font-weight: 300;
+font-size: 16px;
+line-height: 160%;
+}

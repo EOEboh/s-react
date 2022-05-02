@@ -16,27 +16,27 @@ class AttributesValue extends PureComponent {
 
     return (
       <>
-        <ButtonAttributes
-          onChange={(e) => {
-            onChange(e);
-            handleItemsSelect(e, attrType);
-          }}
-          value={itemValue}
-          name={attrName}
-          id={itemValue + attrName}
-          disabled={disabled}
-        />
         <div style={styles.value}> 
         <label
           htmlFor={itemValue + attrName}
           style={
             attrType === "swatch"
-              ? {
-                  backgroundColor: itemValue
-                }
-              : {}
+            ? {
+              backgroundColor: itemValue
+            }
+            : {}
           }
         >
+          <ButtonAttributes
+            onChange={(e) => {
+              onChange(e);
+              handleItemsSelect(e, attrType);
+            }}
+            value={itemValue}
+            name={attrName}
+            id={itemValue + attrName}
+            disabled={disabled}
+          />
           {attrType === "swatch" ? "" : itemValue}
         </label>
         </div>
@@ -47,17 +47,15 @@ class AttributesValue extends PureComponent {
 
 const styles = {
   value: {
-    width: '50%',
-    height: 'auto',
-    // margin: 'auto',
+    width: '63px',
+    height: '45px',
+    textAlign: 'center',
     border: 'none',
-    borderRadius: '10px',
-    backgroundColor: 'green',
+    backgroundColor: '',
+    border: '1px solid',
     letterSpacing: '0.05em',
     color: 'black',
     fontWeight: 'bold',
-    display: 'grid',
-    gridTemplateColumns: 'auto',
     placeItems: 'center',
     cursor: 'pointer',
     marginBottom: '1rem',

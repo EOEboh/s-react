@@ -23,8 +23,9 @@ class CartModalProduct extends PureComponent {
     return (
       <div style={styles.product}>
         <div style={styles.productInfo}>
-          <h2 style={styles.infoBrand}>{brand}</h2>
-          <h2>{name}</h2>
+          <h2 style={styles.infoBrand}
+           className='cart-modal-product-brand'>{brand}</h2>
+          <h2 className="cart-modal-product-brand">{name}</h2>
           <h3>
             {currency.symbol}
             {/* {parseFloat(totalAmount.toFixed(2))} */}

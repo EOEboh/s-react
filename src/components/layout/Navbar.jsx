@@ -7,13 +7,14 @@ import Button from "../ui/Buttons/Button";
 import Categories from "../categories/Categories";
 import Wrapper from "../ui/Wrapper";
 import CurrencySwitch from "../currency/CurrencySwitch";
+import '../../App.css';
 
 class Navbar extends PureComponent {
   render() {
     const { qty, toggleModal } = this.props;
 
     return (
-      <header style={styles.header}>
+      <header style={styles.header} className='header'>
         <Wrapper >
           <div style={styles.container}> 
           <Categories />
