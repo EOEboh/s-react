@@ -17,8 +17,8 @@ class CartModalProduct extends PureComponent {
       amount: product.prices.filter((price) => price.currency === currency)
     }));
 
-    // const totalAmount = productPrice[0].amount[0].amount * quantity;
-    const totalAmount = productPrice[0];
+    
+    const totalAmount = productPrice[0]?.amount[0]?.amount * quantity;
 
     return (
       <div style={styles.product}>
@@ -27,8 +27,7 @@ class CartModalProduct extends PureComponent {
            className='cart-modal-product-brand'>{brand}</h2>
           <h2 className="cart-modal-product-brand">{name}</h2>
           <h3 className="cart-modal-product-currency">
-            {currency.symbol}
-            {/* {parseFloat(totalAmount.toFixed(2))} */}
+            {currency.symbol} {parseFloat(totalAmount.toFixed(2))}
           </h3>
           <div style={styles.attributes}>
             {items.map((item) => {

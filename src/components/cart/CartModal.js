@@ -5,10 +5,10 @@ import { hideModal } from "../../features/modalSlice";
 import ButtonFill from "../ui/Buttons/ButtonFill";
 import Modal from "../ui/Modal";
 import NotificationTitle from "../ui/NotificationTitle";
-
 import CartModalProduct from "./CartModalProduct";
 import'../../App.css';
-import ButtonOutline from "../ui/Buttons/ButtonOutline";
+// import ButtonOutline from "../ui/Buttons/ButtonOutline";
+import ButtonCart from '../ui/Buttons/ButtonCart';
 
 class CartModal extends PureComponent {
   
@@ -24,12 +24,12 @@ class CartModal extends PureComponent {
     );
     
 
-    const finalPrice = productPrice.map((item) => item[0]);
+    const finalPrice = productPrice.map((item) => item[0]?.amount[0]);
 
     const totalAmount = cart.reduce((cartTotal, cartItem) => {
       const { quantity } = cartItem;
 
-      const itemTotal = quantity * finalPrice[0];
+      const itemTotal = quantity * finalPrice[0]?.amount;
 
       cartTotal += itemTotal;
       return cartTotal;
@@ -43,7 +43,7 @@ class CartModal extends PureComponent {
           <NotificationTitle modal>Your cart is empty</NotificationTitle>
         ) : (
           <>
-            {" "}
+            {" "} 
             <h2 className='cart-modal-h2'>
               My Bag,{" "}
               <span>
@@ -65,15 +65,16 @@ class CartModal extends PureComponent {
               </p>
             </div>
             <div style={styles.buttons} className='cart-modal-btns'>
-              <ButtonOutline onClick={ () => hideModal()} link={"/cart"}
-              style={styles.button}
+              <ButtonCart onClick={ () => hideModal()} link={"/cart"}
               >
-                VIEW BAG
-              </ButtonOutline>
+                view bag
+              </ButtonCart>
               <ButtonFill>
-                check out
+                CHECK OUT
               </ButtonFill>
-            </div>{" "}
+            </div> 
+        
+            {" "}
           </>
         )}
       </Modal>
@@ -105,6 +106,7 @@ const styles = {
   total:{
     display: 'flex',
     justifyContent: 'space-evenly',
+    position: 'static',
     padding: '4rem',
     marginTop: '4rem'
   },
@@ -121,16 +123,6 @@ const styles = {
     color: '#1D1F22'
   },
   buttons:{
-    margin: '2rem 2rem 2rem 0',
-    
-  },
-  button:{
-    background: '#FFFFFF',
-border: '1px solid #1D1F22',
-boxSizing: 'border-box',
-padding: ' 1rem',
-textAlign: 'center',
-marginRight: '1rem',
-fontWeight: 'bold'
+    display: 'flex'
   }
 }

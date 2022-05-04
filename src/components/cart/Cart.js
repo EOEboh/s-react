@@ -12,17 +12,15 @@ class Cart extends PureComponent {
       <section style={styles.cart}>
         <h1 style={styles.cartTitle}>cart</h1>
         <div style={styles.cartProducts}>
-          {cart.length === 0 ? (
-            <NotificationTitle>Your cart is empty</NotificationTitle>
-          ) : (
-            cart.map((product) => (
+          
+            {cart.map((product) => (
               <CartProduct
                 currency={currency}
                 key={product.id}
                 product={product}
               />
-            ))
-          )}
+            ))}
+          
         </div>
       </section>
     );

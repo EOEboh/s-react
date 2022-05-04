@@ -1,7 +1,6 @@
 
 import React, { PureComponent } from "react";
-import Wrapper from "./Wrapper";
-
+import '../../App.css'
 class Modal extends PureComponent {
   componentDidUpdate() {
     const { modal } = this.props;
@@ -20,42 +19,33 @@ class Modal extends PureComponent {
   };
 
   render() {
-    const { children, modal, isOpen, modalIsOpen, hideModal } = this.props;
+    const { children, modal, isOpen, modalIsOpen } = this.props;
 
 
     return (
-      <div style={modalIsOpen ? { background: '#5ece7b',borderRadius: '5px'} : null}>
-        <Wrapper style={wrapperStyles.container}>
-          <div style={modalStyles.modal} onClick={(e) => e.stopPropagation()}>
+      <div style={modal ? {  visibility: 'visible',
+        opacity: 1,
+        zIndex: 100 } : null }>
+          <div style={modalStyles} onClick={(e) => e.stopPropagation()}>
             {children}
           </div>
-        </Wrapper>
       </div>
     );
   }
 }
 
 const modalStyles = {
-  modal: {
-    // backgroundColor: '#5ECE7B',
-    width: '100%',
-    height: 'auto',
-    padding: '1rem',
+    position: 'absolute',
+    left: '1000px',
+    top: '78px',
+    zIndex: '2000',
+    backgroundColor: '#FFFFFF',
+    width: '325px',
+    padding: '16px 16px',
     maxWidth: '34rem',
-    overflowY: 'auto !important',
+    overflow: 'hidden',
     
-  } 
 }
 
-const wrapperStyles = {  
-  container: {
-    width: '100%',
-    height: 'auto',
-    maxWidth: '124rem',
-    margin: '0 auto',
-    transition: 'all 0.5s ease',
-    overflowY: 'auto !important'
-  }
-}
 
 export default Modal;

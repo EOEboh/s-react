@@ -2,13 +2,12 @@ import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 import { addToCart } from "../../features/cartSlice";
 import { hideModal, showModal } from "../../features/modalSlice";
-import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
-import ButtonFill from "../ui/Buttons/ButtonFill";
-import Modal from "../ui/Modal";
+import ReactHtmlParser from 'react-html-parser';
 import NotificationTitle from "../ui/NotificationTitle";
 import ProductAttributes from "./ProductAttributes";
 import ProductPrice from "./ProductPrice";
 import '../../App.css';
+import ButtonDetails from "../ui/Buttons/ButtonDetails";
 
 class ProductContent extends PureComponent {
   constructor(props) {
@@ -73,12 +72,12 @@ class ProductContent extends PureComponent {
   };
 
   render() {
-    const { showModal, currency } = this.props;
+    const {  currency } = this.props;
 
     const { id, name, brand, attributes, prices, description, gallery } =
       this.props.product;
 
-    const { items, isOpen } = this.state;
+    const { items } = this.state;
 
     const priceToCart = prices.filter((price) => price.currency === currency);
 
@@ -116,7 +115,7 @@ class ProductContent extends PureComponent {
             prices={prices}           
           />
         </div>
-        <ButtonFill
+        <ButtonDetails
           onClick={() => {
             this.handleAddToCart(productToCart);
           }}
@@ -124,7 +123,7 @@ class ProductContent extends PureComponent {
           <p className="product-content-text"> 
           Add To Cart
           </p>
-        </ButtonFill>
+        </ButtonDetails>
         <div className="product-content-description">{ReactHtmlParser(description)}</div>
       </div>
     );

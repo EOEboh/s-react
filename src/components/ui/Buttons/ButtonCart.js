@@ -2,16 +2,17 @@
 import React, { PureComponent } from "react";
 import { Link } from "react-router-dom";
 import Button from "./Button";
+import '../../../App.css'
 
 
-class ButtonOutline extends PureComponent {
+class ButtonCart extends PureComponent {
   render() {
-    const {   onClick, children, link, style } = this.props;
+    const {   onClick, children, link } = this.props;
 
 
     if (link) {
       return (
-        <Link onClick={onClick} to={link} className={''}>
+        <Link onClick={onClick} to={link} style={styles} className='button-cart'>
           {children}
         </Link>
       );
@@ -19,6 +20,7 @@ class ButtonOutline extends PureComponent {
 
     return (
       <Button style={styles}
+      className='button-cart'
        onClick={onClick}>
         {children}
       </Button>
@@ -30,14 +32,17 @@ const styles = {
     backgroundColor: 'transparent',
     border: '1px solid black',
     textTransform: 'uppercase',
-    width: '14rem',
-    padding: '0.5rem',
+    position: 'static',
+    width: '120px',
+    height: '43px',
+    left: '0px',
+    right: '0px',
+    padding: '16px 16px',
     textAlign: 'center',
-    color: 'black',
-    fontWeight: 'bold',
+    color: '#1D1F22',
     marginRight: '1rem',
     cursor:'pointer',
 
   
 }
-export default ButtonOutline;
+export default ButtonCart;

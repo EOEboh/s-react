@@ -8,6 +8,7 @@ class NotificationTitle extends PureComponent {
     return (<h2 
       style={modal ? {fontSize: 'small'} : {textAlign: 'center',
     marginBottom: '5px'}}
+    className='notification-title'
     >
       {children}</h2>);
   }

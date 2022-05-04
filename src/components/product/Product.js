@@ -135,6 +135,7 @@ class Product extends PureComponent {
         </Button>
         <ButtonRound
           styles={styles.round}
+          className='button-round'
           onClick={(e) => this.handleClick(e, productToCart)}
         />
         </div>
@@ -227,11 +228,7 @@ const styles = {
           transform: 'scale(0.5)',
           // zIndex: 2,
           cursor: 'pointer',
-          // '&:hover': {
-          //   opacity: 1,
-          //   border: '4px solid red',
-          //   transform: 'scale(1)'
-          // }
+         
         },  
         buttons:{
           // padding: '0.5rem'
@@ -239,10 +236,7 @@ const styles = {
           justifyContent: 'space-between'
           
         },
-        return:{
-          
-        },
-        add:{}
+
 }
 
 
