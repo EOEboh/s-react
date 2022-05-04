@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import NotificationTitle from "../ui/NotificationTitle";
 
 import CartProduct from "./CartProduct";
+import '../../App.css';
 
 class Cart extends PureComponent {
   render() {
@@ -10,17 +11,20 @@ class Cart extends PureComponent {
 
     return (
       <section style={styles.cart}>
-        <h1 style={styles.cartTitle}>cart</h1>
+        <h1 style={styles.cartTitle}
+          className='cart-title'>cart</h1>
         <div style={styles.cartProducts}>
-          
-            {cart.map((product) => (
+          {cart.length === 0 ? (
+            <NotificationTitle>Your cart is empty</NotificationTitle>
+          ) : (
+            cart.map((product) => (
               <CartProduct
                 currency={currency}
                 key={product.id}
                 product={product}
               />
-            ))}
-          
+            ))
+          )}
         </div>
       </section>
     );
@@ -40,17 +44,13 @@ const mapStateToProps = (state) => {
 const styles = {
   cart:{},
   cartTitle:{
-    textTransform: 'uppercase',
-    color: ' #1D1F22',
     position: 'absolute',
+    color: ' #1D1F22',
     width: '84px',
     height: '40px',
     left: '100px',
     top: '160px',
-    fontStyle: 'normal',
-    fontWeight: 700,
-    fontSize: '32px',
-    lineHeight: '40px'
+    textTransform: 'uppercase',
 
   },
   cartProducts:{},

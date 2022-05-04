@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { decreaseQty, increaseQty } from "../../features/cartSlice";
 import ImageSlider from "../slider/ImageSlider";
 import ButtonAmount from "../ui/Buttons/ButtonAmount";
+import '../../App.css';
 
 
 class CartProduct extends PureComponent {
@@ -17,19 +18,29 @@ class CartProduct extends PureComponent {
       amount: product.prices.filter((price) => price.currency === currency)
     }));
 
-    // const totalAmount = productPrice[0].amount[0].amount * quantity;
-    const totalAmount = productPrice[0]
+    const totalAmount = productPrice[0]?.amount[0]?.amount * quantity;
+    
 
     return (
       <div style={styles.product}>
         <div style={styles.productInfo}>
-          <h2 style={styles.infoBrand}>{brand}</h2>
-          <h2 style={styles.infoName}>{name}</h2>
-          <h3 style={styles.infoPrice}>
-            {currency.symbol}
-            {/* {parseFloat(totalAmount.toFixed(2))} */}
+          <h2 style={styles.infoBrand}
+            className='cart-product-brand'>
+              {brand}
+          </h2>
+          <h2 style={styles.infoName}
+          className='cart-product-name'>
+            {name}
+          </h2>
+          <h3 style={styles.infoPrice}
+          className='cart-product-price'>
+            <span>Price:</span>
+            <span className="span-price"> {currency.symbol}</span>
+            {parseFloat(totalAmount.toFixed(2))}
           </h3>
-          <div style={styles.productAttributes}>
+          
+          <div style={styles.productAttributes}
+            className='cart-product-attributes'>
             {items.length > 0 &&
               items.map((item) => {
                 const { attrType, attrName, itemValue } = item;
@@ -66,7 +77,7 @@ class CartProduct extends PureComponent {
           {gallery.length > 1 ? (
             <ImageSlider gallery={gallery} />
             ) : (
-              <img src={gallery[0]} alt={name} />
+              <img src={gallery[0]} alt={name} style={styles.img} />
               )}
         </div>
       </div>
@@ -94,61 +105,57 @@ const styles = {
     justifySelf: 'start'
   },
   infoBrand: {
+    position: 'absolute',
     width: '292px',
     height: '27px',
     left: '101px',
     top: '280px',
     marginBottom: '1.5rem',
-    fontStyle: 'normal',
-    fontWeight: 600,
-    fontSize: '30px',
+
     lineHeight: '27px',
     display: 'flex',
     alignItems: 'center',
     color: '#1D1F22'
   },
   infoName:{
+    position: 'absolute',
     width: '292px',
     height: '27px',
     left: '101px',
     top: '323px',
     marginBottom: '1rem',
-    fontStyle: 'normal',
-    fontWeight: 400,
-    fontSize: '30px',
     lineHeight: '27px',
     display: 'flex',
-alignItems: 'center',
-color: '#1D1F22'
+    alignItems: 'center',
+    color: '#1D1F22'
   },
   infoPrice:{
+    position: 'absolute',
     width: "79px",
     height: "24px",
     left: "100px",
     top: "370px",
-    fontStyle: "normal",
-    fontWeight: "700",
-    fontSize: "24px",
-    lineHeight: "24px",
     display: "flex",
+    justifyContent: 'space-between',
     alignItems: "center"
 
   },
   productAttributes:{
-    display: 'grid',
-    placeItems: 'center',
-    cursor: 'pointer',
-    userSelect: 'none',
-    width: '18px',
+    position: 'absolute',
+    width: '8px',
     height: '18px',
-    left:  '22px',
-    top: '12px',
-    fontStyle: 'normal',
-    fontWeight: 400,
-    fontSize: '16px',
-    lineHeight: '18px'
+    left: '240px',
+    top: '120px',
+   display: 'flex',
+   alignItems: 'center',
+   textAlign: 'center'
   },
-  value:{},
+  value:{
+    display: 'flex',
+alignItems: 'center',
+textAlign: 'center',
+letterSpacing: '0.05em'
+  },
   productAttribute:{},
   productAmount: {
     position: 'relative',
@@ -181,13 +188,16 @@ top: '28.44%',
 bottom: '67.76%'
   },
   productImg:{
-//     position: 'absolute',
-// left: '79.17%',
-// right: '6.94%',
-// top: '20.07%',
-// bottom: '59.28%'
-width: '50rem'
-  }
+    position: 'absolute',
+left: '79.17%',
+right: '6.94%',
+top: '20.07%',
+bottom: '59.28%'
 
+  },
+  img:{
+    width: '300%',
+    height: '150%',
+  }
 }
 export default connect(null, mapDispatchToProps)(CartProduct);
