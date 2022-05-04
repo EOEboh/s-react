@@ -8,6 +8,7 @@ import NotificationTitle from "../ui/NotificationTitle";
 
 import CartModalProduct from "./CartModalProduct";
 import'../../App.css';
+import ButtonOutline from "../ui/Buttons/ButtonOutline";
 
 class CartModal extends PureComponent {
   
@@ -64,11 +65,11 @@ class CartModal extends PureComponent {
               </p>
             </div>
             <div style={styles.buttons} className='cart-modal-btns'>
-              <button onClick={ () => hideModal()} link={"/cart"}
+              <ButtonOutline onClick={ () => hideModal()} link={"/cart"}
               style={styles.button}
               >
                 VIEW BAG
-              </button>
+              </ButtonOutline>
               <ButtonFill>
                 check out
               </ButtonFill>

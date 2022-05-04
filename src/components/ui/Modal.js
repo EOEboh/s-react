@@ -20,7 +20,7 @@ class Modal extends PureComponent {
   };
 
   render() {
-    const { children, modal, isOpen, modalIsOpen } = this.props;
+    const { children, modal, isOpen, modalIsOpen, hideModal } = this.props;
 
 
     return (

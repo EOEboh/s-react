@@ -21,12 +21,6 @@ class Button extends PureComponent {
 
     
     
-    // const buttonClasses = clsx(
-    //   {
-    //     [classes.btn]: true
-    //   },
-    //   className
-    // );
     
 
     if (link) {

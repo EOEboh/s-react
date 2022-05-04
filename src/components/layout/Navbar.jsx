@@ -8,6 +8,7 @@ import Categories from "../categories/Categories";
 import Wrapper from "../ui/Wrapper";
 import CurrencySwitch from "../currency/CurrencySwitch";
 import '../../App.css';
+import Modal from "../ui/Modal";
 
 class Navbar extends PureComponent {
   render() {
