@@ -1,13 +1,21 @@
 
 import React, { PureComponent } from "react";
+import { Link } from "react-router-dom";
 import Button from "./Button";
 import '../../../App.css';
 
 class ButtonFill extends PureComponent {
   render() {
-    const { onClick, children } = this.props;
+    const { onClick, children, link } = this.props;
 
     
+    if (link) {
+      return (
+        <Link onClick={onClick} to={link} style={styles} className='button-cart'>
+          {children}
+        </Link>
+      );
+    }
 
     return (
       <Button style={styles}

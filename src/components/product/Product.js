@@ -149,8 +149,8 @@ class Product extends PureComponent {
         
         {!inStock && <h4 className="product-out-of-stock">Out of stock</h4>}
         {addModal && (
-          <Modal modalIsOpen={modalIsOpen}>
-            <NotificationTitle><h4> Select attributes </h4> </NotificationTitle>
+          <Modal>
+            <NotificationTitle><h4> Select Attributes </h4> </NotificationTitle>
             <ProductAttributes
               productDetailsAttr
               attributes={attributes}

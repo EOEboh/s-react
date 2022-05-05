@@ -12,7 +12,7 @@ class CartProduct extends PureComponent {
     const { product, currency } = this.props;
     const { id, brand, name, priceToCart, gallery, quantity, items } = product;
 
-    const productPrice = priceToCart.map((price) => ({
+    const productPrice = priceToCart?.map((price) => ({
       ...price,
       currency: currency,
       amount: product.prices.filter((price) => price.currency === currency)
@@ -142,13 +142,6 @@ const styles = {
   },
   productAttributes:{
     position: 'absolute',
-    width: '8px',
-    height: '18px',
-    left: '240px',
-    top: '120px',
-   display: 'flex',
-   alignItems: 'center',
-   textAlign: 'center'
   },
   value:{
     display: 'flex',

@@ -7,7 +7,6 @@ import Modal from "../ui/Modal";
 import NotificationTitle from "../ui/NotificationTitle";
 import CartModalProduct from "./CartModalProduct";
 import'../../App.css';
-// import ButtonOutline from "../ui/Buttons/ButtonOutline";
 import ButtonCart from '../ui/Buttons/ButtonCart';
 
 class CartModal extends PureComponent {
@@ -38,10 +37,12 @@ class CartModal extends PureComponent {
    
 
     return (
-      <Modal modal={modal} hideModal={hideModal}>
-        {cart.length === 0 ? (
-          <NotificationTitle modal>Your cart is empty</NotificationTitle>
+      <> 
+       
+      {cart.length === 0 ? (
+        <NotificationTitle modal>Your cart is empty</NotificationTitle>
         ) : (
+          <Modal modal={modal} hideModal={hideModal}>
           <>
             {" "} 
             <h2 className='cart-modal-h2'>
@@ -69,15 +70,18 @@ class CartModal extends PureComponent {
               >
                 view bag
               </ButtonCart>
-              <ButtonFill>
+              <ButtonFill
+              onClick={ () => hideModal()} link={"/cart"}>
                 CHECK OUT
               </ButtonFill>
             </div> 
         
             {" "}
           </>
+          </Modal>
         )}
-      </Modal>
+      
+        </>
     );
   }
 }
@@ -102,6 +106,7 @@ const mapDispatchToProps = (dispatch) => {
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartModal);
 
+// CSS Styling
 const styles = {
   total:{
     display: 'flex',

@@ -26,7 +26,7 @@ class Button extends PureComponent {
     if (link) {
       
       return (
-        <Link className={className} onClick={onClick} to={link}>
+        <Link className={className} onClick={onClick} to={link}>       
           {children} 
         </Link>
       );

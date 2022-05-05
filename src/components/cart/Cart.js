@@ -1,7 +1,6 @@
 import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 import NotificationTitle from "../ui/NotificationTitle";
-
 import CartProduct from "./CartProduct";
 import '../../App.css';
 

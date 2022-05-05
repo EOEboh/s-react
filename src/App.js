@@ -4,11 +4,14 @@ import Cart from "./components/cart/Cart";
 import Layout from "./components/layout/Layout";
 import ProductDetails from "./components/product/ProductDetails";
 import ProductCategoryPage from "./components/product/ProductCategoryPage";
+import Modal from "./components/ui/Modal";
+import CartModal from "./components/cart/CartModal";
 import './App.css'
 
 class App extends PureComponent {
   render() {
     return (
+      <> 
       <Layout>
         <Switch>
           <Route exact path='/'>
@@ -27,6 +30,7 @@ class App extends PureComponent {
           <Route exact path='/cart' component={Cart} />
         </Switch>
       </Layout>
+      </>
     );
   }
 }

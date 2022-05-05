@@ -10,7 +10,9 @@ import CurrencySwitch from "../currency/CurrencySwitch";
 import '../../App.css';
 
 
+
 class Navbar extends PureComponent {
+  
   render() {
     const { qty, toggleModal } = this.props;
 
@@ -26,11 +28,9 @@ class Navbar extends PureComponent {
             <CurrencySwitch />
             <div style={styles.cart}>
               <Button
-                onClick={() => {
-                  toggleModal();
-                }}
+                onClick={() => toggleModal()}
                 style={styles.cart["&btn"]}
-              >
+              >   
                 <CartButton />
               </Button>
               {qty > 0 && (<span style={styles.cart["&qty"]}>{qty}</span>)}

@@ -19,13 +19,11 @@ class Modal extends PureComponent {
   };
 
   render() {
-    const { children, modal, isOpen, modalIsOpen } = this.props;
+    const { children, modal, hideModal} = this.props;
 
 
     return (
-      <div style={modal ? {  visibility: 'visible',
-        opacity: 1,
-        zIndex: 100 } : null }>
+      <div style={hideModal ? {  visibility: 'visible' } : { visibility: 'none'} }>
           <div style={modalStyles} onClick={(e) => e.stopPropagation()}>
             {children}
           </div>
